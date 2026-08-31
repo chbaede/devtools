@@ -25,7 +25,7 @@ A lightweight, high-performance, single-page developer portal featuring **31+ of
 | :--- | :--- | :--- |
 | **Text Utilities Pro** | `#/text-utils` | Remove duplicate lines, sort (A-Z/Z-A/Length), reverse, trim whitespace, add line numbers, case conversions, word/char statistics. |
 | **Markdown Editor** | `#/markdown` | Real-time live editor with syntax highlighting, GitHub Flavored Markdown (GFM) line breaks, typography, and HTML preview. |
-| **Dual-Pane Diff Checker** | `#/diff` | Side-by-side split & unified view code comparison with line numbers, whitespace trimmer, and Git-compatible `.patch` & `.diff` download/export. |
+| **Dual-Pane Diff Checker** | `#/diff` | Side-by-side split & unified code comparison with file upload for original & modified files, line numbers, and Git-compatible `.patch` & `.diff` export. |
 
 ### 🔄 Converter Suite
 | Tool | Path | Description |
