@@ -79,18 +79,13 @@
     /* Regex Highlighting */
     .regex-match { background-color: rgba(249, 226, 175, 0.3); border-bottom: 2px solid #f9e2af; font-weight: bold; color: #f9e2af; }
 
-    /* Strictly Block Google Side Rails, Bottom Anchors, and Broken Auto-Placed Ads */
-    body > .google-auto-placed,
-    main .google-auto-placed,
-    .adsbygoogle-noablate,
+    /* Precision Block Google Side Rails & Bottom Sticky Anchors (Preserves Interstitial Close Button) */
     iframe[id*="siderail"],
     div[id*="siderail"],
     div[class*="side-rail"],
     [data-ad-slot="side-rail"],
-    ins.adsbygoogle[data-anchor-status],
-    body > ins.adsbygoogle:not(#ad-container-top ins),
-    body > div[style*="position: fixed"]:not(#toast),
-    body > ins[style*="position: fixed"],
+    .adsbygoogle-side-rail,
+    ins.adsbygoogle[data-anchor-status="displayed"],
     ins.adsbygoogle[data-ad-status="unfilled"] {
       display: none !important;
       visibility: hidden !important;
@@ -100,13 +95,16 @@
       pointer-events: none !important;
     }
 
-    /* Clean Top/Middle Single Ad Container */
+    /* Slim & Compact Top Single Ad Banner (60px-70px max) */
     #ad-container-top {
-      max-height: 100px;
+      max-height: 70px !important;
       overflow: hidden;
     }
     #ad-container-top:has(ins[data-ad-status="unfilled"]) {
       display: none !important;
+    }
+    #ad-container-top ins.adsbygoogle {
+      max-height: 65px !important;
     }
   </style>
 </head>
@@ -153,15 +151,15 @@
     </div>
   </header>
 
-  <!-- Top Display Responsive Ad -->
-  <aside id="ad-container-top" aria-label="Top Advert Area" class="w-full border-b border-[#313244] ad-container-top flex items-center justify-center p-1 overflow-hidden shrink-0">
-    <div class="w-full max-w-5xl text-center">
+  <!-- Top Display Slim Horizontal Responsive Ad -->
+  <aside id="ad-container-top" aria-label="Top Advert Area" class="w-full border-b border-[#313244] ad-container-top flex items-center justify-center p-1 overflow-hidden shrink-0 bg-[#11111b]/40">
+    <div class="w-full max-w-4xl text-center flex justify-center">
       <ins class="adsbygoogle"
-           style="display:block"
+           style="display:inline-block;width:100%;max-width:728px;height:65px;max-height:65px;"
            data-ad-client="ca-pub-6854824605420161"
            data-ad-slot="9426228178"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
+           data-ad-format="horizontal"
+           data-full-width-responsive="false"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
   </aside>
