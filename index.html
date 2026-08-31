@@ -10,13 +10,86 @@
   <meta name="keywords" content="Developer Tools, Text Utilities, Markdown Editor, Diff Checker, CSV to JSON, URL Converter, Base64, Timestamp, Number Base, JWT Decoder, Hash Generator, UUID, Escape, CAN ID, Bitwise, yocto.co.kr">
   <meta name="author" content="chbaede">
   <link rel="canonical" href="https://devtools.yocto.co.kr">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
   
-  <!-- Open Graph -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://devtools.yocto.co.kr">
-  <meta property="og:title" content="Developer Tools | All-in-One Online Utilities Portal">
-  <meta property="og:description" content="31+ Feature-Packed Professional Utilities with Text Utilities, Dual-Pane Diff, Security Suite, Converters & Embedded Tools">
-  
+  <meta property="og:title" content="Developer Tools | 31+ Free Online Utilities Suite">
+  <meta property="og:description" content="100% Client-side developer tools: Text Utilities, Diff Checker, CSV/JSON/YAML Converter, JWT Decoder, Regex Tester, Embedded Tools & more.">
+  <meta property="og:site_name" content="Developer Tools">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://devtools.yocto.co.kr">
+  <meta name="twitter:title" content="Developer Tools | 31+ Free Online Utilities Suite">
+  <meta name="twitter:description" content="100% Client-side developer tools: Text Utilities, Diff Checker, CSV/JSON/YAML Converter, JWT Decoder, Regex Tester, Embedded Tools & more.">
+
+  <!-- Google Structured Data (JSON-LD Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://devtools.yocto.co.kr/#webapp",
+        "name": "Developer Tools Suite",
+        "url": "https://devtools.yocto.co.kr",
+        "description": "Comprehensive 100% client-side privacy-first developer utilities portal featuring 31+ tools for web, backend, and embedded SW engineers.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Changhyeok Bae",
+          "url": "https://github.com/chbaede"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "name": "Featured Developer Tools",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Diff Checker", "url": "https://devtools.yocto.co.kr/#/diff" },
+          { "@type": "ListItem", "position": 2, "name": "JSON ↔ YAML Converter", "url": "https://devtools.yocto.co.kr/#/json-yaml" },
+          { "@type": "ListItem", "position": 3, "name": "JWT Token Decoder & Verifier", "url": "https://devtools.yocto.co.kr/#/jwt" },
+          { "@type": "ListItem", "position": 4, "name": "CSV to JSON & Table", "url": "https://devtools.yocto.co.kr/#/csv-json" },
+          { "@type": "ListItem", "position": 5, "name": "Regex Tester & Builder", "url": "https://devtools.yocto.co.kr/#/regex" },
+          { "@type": "ListItem", "position": 6, "name": "Markdown Live Editor", "url": "https://devtools.yocto.co.kr/#/markdown" },
+          { "@type": "ListItem", "position": 7, "name": "Automotive CAN ID Calculator", "url": "https://devtools.yocto.co.kr/#/can-id" },
+          { "@type": "ListItem", "position": 8, "name": "Hash & HMAC Generator", "url": "https://devtools.yocto.co.kr/#/hash" },
+          { "@type": "ListItem", "position": 9, "name": "Bitwise Register Visualizer", "url": "https://devtools.yocto.co.kr/#/bitwise" },
+          { "@type": "ListItem", "position": 10, "name": "Timestamp & Unix Epoch Converter", "url": "https://devtools.yocto.co.kr/#/timestamp" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is my code or data sent to any server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All tools in Developer Tools execute 100% locally within your web browser. No code, API keys, passwords, or tokens are ever sent to remote servers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use Developer Tools offline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The entire application is self-contained with local vendor scripts and works offline without internet connection."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <!-- Google AdSense Main Script -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6854824605420161" crossorigin="anonymous"></script>
 
@@ -513,6 +586,30 @@
 
     <!-- Dynamic Viewport Area -->
     <main id="app-viewport" class="flex-1 overflow-y-auto bg-[#1e1e2e] flex flex-col p-4 md:p-6">
+      <noscript>
+        <div class="p-6 bg-[#181825] rounded-2xl border border-[#313244] text-[#cdd6f4]">
+          <h1 class="text-2xl font-bold mb-4 text-[#89b4fa]">Developer Tools Suite - 31+ Free Online Utilities</h1>
+          <p class="mb-4 text-sm text-[#bac2de]">100% Client-side privacy-first web developer utilities portal. All data is processed locally without remote server transmission.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs mt-4">
+            <div class="p-3 bg-[#11111b] rounded-lg border border-[#313244]">
+              <h2 class="font-bold text-sm text-[#a6e3a1] mb-1">📝 Text Utilities & Dual-Pane Diff Checker</h2>
+              <p class="text-[#a6adc8]">Compare source code with side-by-side split & unified views, export Git-compatible .patch & .diff files. Remove duplicate lines, sort, format Markdown with live preview.</p>
+            </div>
+            <div class="p-3 bg-[#11111b] rounded-lg border border-[#313244]">
+              <h2 class="font-bold text-sm text-[#f9e2af] mb-1">🔄 Converters (JSON, YAML, CSV, Base64, Timestamp)</h2>
+              <p class="text-[#a6adc8]">Convert CSV to JSON and interactive tables, URL encode/decode, Base64 image/text, Unix epoch timestamp converter with live clock, JSON to YAML converter.</p>
+            </div>
+            <div class="p-3 bg-[#11111b] rounded-lg border border-[#313244]">
+              <h2 class="font-bold text-sm text-[#cba6f7] mb-1">🔐 Security & Cryptography (JWT, Hash, UUID)</h2>
+              <p class="text-[#a6adc8]">Inspect and verify JWT tokens with signature validation, generate SHA-256 / SHA-512 / MD5 / HMAC hashes, bulk UUID generator, string escape/unescape.</p>
+            </div>
+            <div class="p-3 bg-[#11111b] rounded-lg border border-[#313244]">
+              <h2 class="font-bold text-sm text-[#fab387] mb-1">🚗 Embedded & Automotive Engineering Tools</h2>
+              <p class="text-[#a6adc8]">Calculate Automotive CAN IDs (11-bit Standard & 29-bit Extended), Bitwise Register visualizer, CRC checksums (CRC-8, CRC-16, CRC-32), Endianness converter.</p>
+            </div>
+          </div>
+        </div>
+      </noscript>
     </main>
 
   </div>
@@ -695,6 +792,22 @@
     function handleRoute() {
       const hash = window.location.hash || '#/';
       const viewport = document.getElementById('app-viewport');
+      const tool = toolsRegistry.find(t => t.path === hash);
+
+      // Dynamic SEO Title & Meta Description Update
+      if (tool) {
+        document.title = `${tool.name} | Online Developer Tools`;
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', `${tool.name}: ${tool.desc} - 100% Client-side private tool.`);
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) ogTitle.setAttribute('content', `${tool.name} | Developer Tools`);
+      } else {
+        document.title = "Developer Tools | 31+ Free Online Utilities Suite";
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', "Ultimate free online developer utilities portal with 31+ rich, fully functional tools for Web, Cloud, Embedded & Automotive SW engineers.");
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) ogTitle.setAttribute('content', "Developer Tools | 31+ Free Online Utilities Suite");
+      }
 
       document.querySelectorAll('.nav-link').forEach(link => {
         const path = link.getAttribute('data-path');
