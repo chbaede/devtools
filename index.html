@@ -1093,7 +1093,7 @@
               <div id="diff-res-right" class="flex-1 overflow-y-auto p-1 bg-[#11111b] font-mono text-xs"></div>
             </div>
 
-            <div id="diff-pane-unified" class="w-full flex-col bg-[#181825] rounded-xl border border-[#313244] overflow-hidden hidden">
+            <div id="diff-pane-unified" class="w-full flex-col bg-[#181825] rounded-xl border border-[#313244] overflow-hidden hidden flex-1 min-h-0">
               <div class="bg-[#1e1e2e] px-3 py-1.5 text-xs font-semibold text-[#89b4fa] border-b border-[#313244] flex justify-between items-center shrink-0">
                 <span>Unified Inline Diff</span>
                 <span class="text-[10px] text-[#6c7086]">Unified Stream</span>
@@ -1200,8 +1200,11 @@
 
           if (mode === 'unified') {
             paneLeft.classList.add('hidden');
+            paneLeft.classList.remove('flex');
             paneRight.classList.add('hidden');
+            paneRight.classList.remove('flex');
             paneUnified.classList.remove('hidden');
+            paneUnified.classList.add('flex');
 
             let html = '';
             let lineNum1 = 1;
@@ -1222,8 +1225,11 @@
             resUnified.innerHTML = html || '<div class="text-xs text-[#6c7086] p-4 text-center">No differences found. Contents are identical.</div>';
           } else {
             paneLeft.classList.remove('hidden');
+            paneLeft.classList.add('flex');
             paneRight.classList.remove('hidden');
+            paneRight.classList.add('flex');
             paneUnified.classList.add('hidden');
+            paneUnified.classList.remove('flex');
 
             let leftHtml = '';
             let rightHtml = '';
