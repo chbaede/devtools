@@ -24,7 +24,8 @@ Feel free to visit the link above, test out the utilities in your browser, and b
 
 - **🔒 100% Client-Side & Private**: All data processing, conversions, hashes, and diff calculations happen locally in your browser. No sensitive tokens, keys, or code are ever transmitted to any remote server.
 - **⚡ Zero-Latency Single Page Architecture**: Powered by client-side hash routing (`#/text-utils`, `#/diff`, `#/csv-json`, `#/regex`, etc.) with instant responses.
-- **🎨 Catppuccin Mocha Dark Theme**: Beautiful, modern developer dark theme with high-contrast color indicators and responsive UI across all desktop and mobile devices.
+- **🌙 / ☀️ Dual Dark & Light Theme**: Toggle seamlessly between deep Catppuccin Mocha Dark mode and clean Modern Slate Light mode with persistent state saving.
+- **📱 Fully Mobile-Responsive Design**: Slide-over navigation drawer with backdrop overlay, optimized touch controls, and adaptive flex layouts for smartphones, tablets, and desktops.
 - **📦 Completely Self-Contained**: All vendor libraries (Tailwind CSS, Highlight.js, Marked, js-yaml, jsdiff) are bundled locally in the `/vendor` folder for full offline capabilities.
 
 ---

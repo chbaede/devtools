@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +22,11 @@
 
   <!-- Local Vendor Scripts -->
   <script src="vendor/tailwindcss.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
   <script src="vendor/marked.min.js"></script>
   <script src="vendor/highlight.min.js"></script>
   <link rel="stylesheet" href="vendor/github-dark.min.css">
@@ -36,8 +41,7 @@
     ::-webkit-scrollbar-thumb:hover { background: #585b70; }
 
     /* Ad Container Protection */
-    .ad-container-top { min-height: 90px; background: rgba(24, 24, 37, 0.4); }
-    .ad-container-bottom { min-height: 180px; background: rgba(24, 24, 37, 0.4); }
+    .ad-container-top { min-height: 70px; background: rgba(24, 24, 37, 0.4); }
 
     /* Diff View Styling */
     .diff-line { display: flex; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; line-height: 19px; }
@@ -106,41 +110,179 @@
     #ad-container-top ins.adsbygoogle {
       max-height: 65px !important;
     }
+
+    /* ========================================================= */
+    /* ☀️ ULTRA-CLEAN MODERN LIGHT MODE OVERRIDES (Catppuccin Latte/Slate) */
+    /* ========================================================= */
+    html:not(.dark) {
+      background-color: #f1f5f9 !important;
+      color: #334155 !important;
+    }
+    html:not(.dark) body {
+      background-color: #f1f5f9 !important;
+      color: #334155 !important;
+    }
+    html:not(.dark) header {
+      background-color: #ffffff !important;
+      border-color: #e2e8f0 !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    }
+    html:not(.dark) #sidebar {
+      background-color: #ffffff !important;
+      border-color: #e2e8f0 !important;
+      box-shadow: 2px 0 12px rgba(0, 0, 0, 0.03) !important;
+    }
+    html:not(.dark) #app-viewport {
+      background-color: #f8fafc !important;
+    }
+    html:not(.dark) .bg-\[\#181825\] {
+      background-color: #ffffff !important;
+      border-color: #e2e8f0 !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+    }
+    html:not(.dark) .bg-\[\#1e1e2e\] {
+      background-color: #f1f5f9 !important;
+      border-color: #e2e8f0 !important;
+    }
+    html:not(.dark) .bg-\[\#11111b\] {
+      background-color: #f8fafc !important;
+      border-color: #e2e8f0 !important;
+      color: #1e293b !important;
+    }
+    html:not(.dark) .bg-\[\#313244\] {
+      background-color: #e2e8f0 !important;
+      color: #334155 !important;
+    }
+    html:not(.dark) .bg-\[\#313244\]\/50,
+    html:not(.dark) .bg-\[\#313244\]\/60 {
+      background-color: #f1f5f9 !important;
+    }
+    html:not(.dark) .hover\:bg-\[\#313244\]\/60:hover,
+    html:not(.dark) .hover\:bg-\[\#45475a\]:hover {
+      background-color: #e2e8f0 !important;
+      color: #0f172a !important;
+    }
+    html:not(.dark) .border-\[\#313244\],
+    html:not(.dark) .border-\[\#313244\]\/60,
+    html:not(.dark) .border-\[\#45475a\] {
+      border-color: #e2e8f0 !important;
+    }
+    html:not(.dark) .text-\[\#cdd6f4\] {
+      color: #1e293b !important;
+    }
+    html:not(.dark) .text-\[\#a6adc8\],
+    html:not(.dark) .text-\[\#bac2de\] {
+      color: #64748b !important;
+    }
+    html:not(.dark) .text-\[\#6c7086\] {
+      color: #94a3b8 !important;
+    }
+    html:not(.dark) input,
+    html:not(.dark) textarea,
+    html:not(.dark) select {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+      border-color: #cbd5e1 !important;
+    }
+    html:not(.dark) input:focus,
+    html:not(.dark) textarea:focus,
+    html:not(.dark) select:focus {
+      border-color: #3b82f6 !important;
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1) !important;
+    }
+    html:not(.dark) .markdown-body {
+      color: #1e293b !important;
+    }
+    html:not(.dark) .markdown-body h1,
+    html:not(.dark) .markdown-body h2,
+    html:not(.dark) .markdown-body h3,
+    html:not(.dark) .markdown-body h4,
+    html:not(.dark) .markdown-body h5,
+    html:not(.dark) .markdown-body h6 {
+      color: #0f172a !important;
+      border-color: #e2e8f0 !important;
+    }
+    html:not(.dark) .markdown-body pre {
+      background-color: #f8fafc !important;
+      border-color: #e2e8f0 !important;
+    }
+    html:not(.dark) .markdown-body code:not(pre code) {
+      background-color: #e2e8f0 !important;
+      color: #b45309 !important;
+    }
+    html:not(.dark) .custom-table th {
+      background-color: #f1f5f9 !important;
+      color: #1e293b !important;
+      border-color: #e2e8f0 !important;
+    }
+    html:not(.dark) .custom-table td {
+      border-color: #e2e8f0 !important;
+      color: #334155 !important;
+    }
+    html:not(.dark) .custom-table tr:nth-child(even) {
+      background-color: rgba(241, 245, 249, 0.6) !important;
+    }
+    html:not(.dark) .diff-num {
+      background-color: #f1f5f9 !important;
+      color: #94a3b8 !important;
+      border-color: #e2e8f0 !important;
+    }
+    html:not(.dark) .diff-unchanged {
+      color: #334155 !important;
+    }
+    html:not(.dark) ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    html:not(.dark) ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+    }
+    html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
   </style>
 </head>
-<body class="bg-[#1e1e2e] text-[#cdd6f4] h-screen flex flex-col font-sans overflow-hidden">
+<body class="bg-[#1e1e2e] text-[#cdd6f4] h-screen flex flex-col font-sans overflow-hidden transition-colors duration-200">
 
   <!-- Top Navigation Header -->
-  <header class="bg-[#181825] border-b border-[#313244] px-6 py-2.5 flex items-center justify-between shadow-md z-30 shrink-0">
-    <div class="flex items-center gap-3">
-      <button id="btn-toggle-sidebar" class="md:hidden text-[#a6adc8] hover:text-[#cdd6f4] p-1.5 rounded-lg hover:bg-[#313244]">
+  <header class="bg-[#181825] border-b border-[#313244] px-4 md:px-6 py-2.5 flex items-center justify-between shadow-md z-30 shrink-0">
+    <div class="flex items-center gap-2.5 sm:gap-3">
+      <!-- Mobile Sidebar Hamburger Button -->
+      <button id="btn-toggle-sidebar" class="md:hidden text-[#a6adc8] hover:text-[#cdd6f4] p-1.5 rounded-lg hover:bg-[#313244] transition cursor-pointer" title="Toggle Navigation Menu">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
 
       <a href="#/" class="flex items-center gap-2.5">
-        <div class="w-8 h-8 rounded-lg bg-[#89b4fa]/15 border border-[#89b4fa]/30 flex items-center justify-center text-[#89b4fa] shadow-sm">
+        <div class="w-8 h-8 rounded-lg bg-[#89b4fa]/15 border border-[#89b4fa]/30 flex items-center justify-center text-[#89b4fa] shadow-sm shrink-0">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
           </svg>
         </div>
         <div>
-          <h1 id="brand-title" class="text-sm font-bold text-[#cdd6f4] leading-tight flex items-center gap-2">
-            Developer Tools <span class="text-[10px] px-1.5 py-0.2 rounded bg-[#89b4fa]/20 text-[#89b4fa] font-mono font-semibold">v7.5 Complete</span>
+          <h1 id="brand-title" class="text-xs sm:text-sm font-bold text-[#cdd6f4] leading-tight flex items-center gap-1.5 sm:gap-2">
+            Developer Tools <span class="text-[9px] sm:text-[10px] px-1.5 py-0.2 rounded bg-[#89b4fa]/20 text-[#89b4fa] font-mono font-semibold">v7.5 Complete</span>
           </h1>
-          <p id="brand-subtitle" class="text-[10px] text-[#a6adc8]">31+ Rich Developer Utilities</p>
+          <p id="brand-subtitle" class="text-[9px] sm:text-[10px] text-[#a6adc8] hidden xs:block">31+ Rich Developer Utilities</p>
         </div>
       </a>
     </div>
 
-    <div class="flex items-center gap-2.5">
-      <div class="relative hidden sm:block w-56">
+    <div class="flex items-center gap-2 sm:gap-2.5">
+      <!-- Search Input (Desktop & Tablet) -->
+      <div class="relative hidden sm:block w-48 md:w-56">
         <svg class="w-3.5 h-3.5 absolute left-3 top-2.5 text-[#a6adc8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 0 0114 0z"/></svg>
         <input id="header-search-input" type="text" class="w-full pl-8 pr-3 py-1 bg-[#1e1e2e] text-[#cdd6f4] text-xs rounded-lg border border-[#313244] outline-none focus:border-[#89b4fa] transition" placeholder="Search (e.g. text, diff, jwt, yaml)...">
       </div>
 
-      <a href="https://github.com/chbaede/devtools" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 text-xs font-medium bg-[#313244] hover:bg-[#45475a] text-[#cdd6f4] rounded-lg transition flex items-center gap-1.5 border border-[#45475a]">
+      <!-- Dark / Light Mode Toggle Button -->
+      <button id="btn-theme-toggle" class="px-2 sm:px-2.5 py-1 text-xs font-medium bg-[#313244] hover:bg-[#45475a] text-[#f9e2af] rounded-lg transition flex items-center gap-1.5 border border-[#45475a] cursor-pointer shadow-sm" title="Toggle Light / Dark Mode">
+        <span id="theme-toggle-icon" class="text-sm">☀️</span>
+        <span id="theme-toggle-text" class="hidden sm:inline text-xs text-[#cdd6f4]">Light</span>
+      </button>
+
+      <!-- GitHub Link -->
+      <a href="https://github.com/chbaede/devtools" target="_blank" rel="noopener noreferrer" class="px-2 sm:px-2.5 py-1 text-xs font-medium bg-[#313244] hover:bg-[#45475a] text-[#cdd6f4] rounded-lg transition flex items-center gap-1.5 border border-[#45475a]">
         <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-        <span>GitHub</span>
+        <span class="hidden xs:inline">GitHub</span>
       </a>
     </div>
   </header>
@@ -161,8 +303,11 @@
   <!-- Main Body Layout -->
   <div class="flex-1 flex overflow-hidden relative">
 
-    <!-- Left Navigation Sidebar -->
-    <aside id="sidebar" class="w-64 bg-[#181825] border-r border-[#313244] flex flex-col shrink-0 transition-all duration-300 z-20 select-none">
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div id="sidebar-backdrop" class="fixed inset-0 bg-black/60 z-30 hidden md:hidden backdrop-blur-sm transition-opacity duration-300"></div>
+
+    <!-- Left Navigation Sidebar (Responsive Slide-Over Drawer on Mobile) -->
+    <aside id="sidebar" class="w-64 bg-[#181825] border-r border-[#313244] flex flex-col shrink-0 transition-transform duration-300 z-40 select-none fixed inset-y-0 left-0 -translate-x-full md:relative md:translate-x-0 shadow-2xl md:shadow-none">
       
       <!-- Sidebar Search Box -->
       <div class="p-3 border-b border-[#313244]/60">
@@ -4582,24 +4727,96 @@
 
 
 
-    // Toggle Mobile Sidebar
-    document.getElementById('btn-toggle-sidebar').addEventListener('click', () => {
-      const sb = document.getElementById('sidebar');
-      sb.classList.toggle('-translate-x-full');
-      sb.classList.toggle('absolute');
-    });
+    // ==========================================
+    // 🌙 / ☀️ THEME MANAGER (DARK / LIGHT MODE)
+    // ==========================================
+    function initTheme() {
+      const saved = localStorage.getItem('devtools-theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      setTheme(saved);
+    }
 
-    // Header Search
-    document.getElementById('header-search-input').addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        const q = e.target.value.toLowerCase().trim();
-        const match = toolsRegistry.find(t => t.name.toLowerCase().includes(q) || t.path.includes(q));
-        if (match) window.location.hash = match.path;
+    function setTheme(theme) {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-toggle-icon');
+      const text = document.getElementById('theme-toggle-text');
+
+      if (theme === 'light') {
+        html.classList.remove('dark');
+        if (icon) icon.textContent = '🌙';
+        if (text) text.textContent = 'Dark';
+        localStorage.setItem('devtools-theme', 'light');
+      } else {
+        html.classList.add('dark');
+        if (icon) icon.textContent = '☀️';
+        if (text) text.textContent = 'Light';
+        localStorage.setItem('devtools-theme', 'dark');
+      }
+    }
+
+    const btnThemeToggle = document.getElementById('btn-theme-toggle');
+    if (btnThemeToggle) {
+      btnThemeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        setTheme(isDark ? 'light' : 'dark');
+      });
+    }
+
+    // ==========================================
+    // 📱 MOBILE SIDEBAR DRAWER & BACKDROP
+    // ==========================================
+    const sidebar = document.getElementById('sidebar');
+    const backdrop = document.getElementById('sidebar-backdrop');
+    const btnToggleSidebar = document.getElementById('btn-toggle-sidebar');
+
+    function toggleSidebar(show) {
+      if (!sidebar) return;
+      const isClosed = sidebar.classList.contains('-translate-x-full');
+      const shouldOpen = show !== undefined ? show : isClosed;
+
+      if (shouldOpen) {
+        sidebar.classList.remove('-translate-x-full');
+        if (backdrop) backdrop.classList.remove('hidden');
+      } else {
+        sidebar.classList.add('-translate-x-full');
+        if (backdrop) backdrop.classList.add('hidden');
+      }
+    }
+
+    if (btnToggleSidebar) {
+      btnToggleSidebar.addEventListener('click', () => toggleSidebar());
+    }
+
+    if (backdrop) {
+      backdrop.addEventListener('click', () => toggleSidebar(false));
+    }
+
+    // Auto-close sidebar on mobile after clicking any navigation link
+    document.addEventListener('click', (e) => {
+      const navLink = e.target.closest('.nav-link');
+      if (navLink && window.innerWidth < 768) {
+        toggleSidebar(false);
       }
     });
 
+    // Header Search
+    const headerSearchInp = document.getElementById('header-search-input');
+    if (headerSearchInp) {
+      headerSearchInp.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          const q = e.target.value.toLowerCase().trim();
+          const match = toolsRegistry.find(t => t.name.toLowerCase().includes(q) || t.path.includes(q));
+          if (match) window.location.hash = match.path;
+        }
+      });
+    }
+
+    // Initialize Theme & Route
+    initTheme();
     window.addEventListener('hashchange', handleRoute);
-    window.addEventListener('DOMContentLoaded', handleRoute);
+    window.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      handleRoute();
+    });
   </script>
 </body>
 </html>
