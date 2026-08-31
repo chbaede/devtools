@@ -387,19 +387,55 @@
       marked.use({ breaks: true, gfm: true });
     }
 
-    // Global Utilities
-    function copyToClipboard(text, msg = "Copied to clipboard!") {
-      if (!text) return;
-      navigator.clipboard.writeText(text).then(() => showToast(msg)).catch(() => {
+    // Global App Utilities (DRY & Optimized)
+    const AppUtils = {
+      copy: (text, msg = "Copied to clipboard!") => {
+        if (!text) return;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(() => showToast(msg)).catch(() => AppUtils.fallbackCopy(text, msg));
+        } else {
+          AppUtils.fallbackCopy(text, msg);
+        }
+      },
+      fallbackCopy: (text, msg) => {
         const ta = document.createElement('textarea');
         ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
         document.body.appendChild(ta);
         ta.select();
-        document.execCommand('copy');
+        try { document.execCommand('copy'); showToast(msg); } catch(e) {}
         document.body.removeChild(ta);
-        showToast(msg);
-      });
-    }
+      },
+      download: (content, filename, mimeType = "text/plain;charset=utf-8") => {
+        if (!content) return;
+        const blob = new Blob([content], { type: mimeType });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showToast(`Downloaded ${filename}!`);
+      },
+      escape: (str) => {
+        if (!str) return '';
+        return String(str).replace(/[&<>"']/g, m => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[m]));
+      },
+      debounce: (fn, delay = 50) => {
+        let timer;
+        return (...args) => {
+          clearTimeout(timer);
+          timer = setTimeout(() => fn(...args), delay);
+        };
+      }
+    };
+
+    // Backward compatible aliases
+    const copyToClipboard = AppUtils.copy;
+    const escapeHtml = AppUtils.escape;
 
     // Rich Preset Sample Templates Registry
     const presetTemplates = {
@@ -685,11 +721,12 @@
       initToolEngine(hash, bodyContainer, presets);
 
       document.getElementById('tool-btn-copy').addEventListener('click', () => {
-        const out = document.getElementById('tool-output') || document.getElementById('diff-res-right') || document.getElementById('jwt-payload-out') || document.getElementById('tool-input');
-        if (out && out.value) {
-          navigator.clipboard.writeText(out.value).then(() => showToast("Copied to clipboard!"));
-        } else if (out && out.innerText) {
-          navigator.clipboard.writeText(out.innerText).then(() => showToast("Copied to clipboard!"));
+        const out = document.getElementById('tool-output') || 
+                    document.getElementById('jwt-payload-out') || 
+                    document.getElementById('diff-res-right') || 
+                    document.getElementById('tool-input');
+        if (out) {
+          AppUtils.copy(out.value || out.innerText || '');
         }
       });
 
@@ -949,14 +986,7 @@
         });
 
         document.getElementById('btn-md-download').addEventListener('click', () => {
-          const blob = new Blob([inp.value], { type: 'text/markdown' });
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = 'document.md';
-          a.click();
-          URL.revokeObjectURL(url);
-          showToast("Exported document.md!");
+          AppUtils.download(inp.value, 'document.md', 'text/markdown');
         });
 
         const presetSel = document.getElementById('preset-select');
@@ -1192,14 +1222,7 @@
           const text1 = origInp.value;
           const text2 = chgInp.value;
           const patchContent = createUnifiedPatchText(text1, text2, `code.${extension === 'patch' ? 'patch' : 'diff'}`);
-          const blob = new Blob([patchContent], { type: 'text/plain;charset=utf-8' });
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = `changes.${extension}`;
-          a.click();
-          URL.revokeObjectURL(url);
-          showToast(`Downloaded changes.${extension}!`);
+          AppUtils.download(patchContent, `changes.${extension}`, 'text/plain;charset=utf-8');
         };
 
         btnCopyPatch.addEventListener('click', () => {
@@ -2007,14 +2030,7 @@
             const bytes = new Uint8Array(binary.length);
             for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
 
-            const blob = new Blob([bytes], { type: 'application/octet-stream' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'decoded_file.bin';
-            a.click();
-            URL.revokeObjectURL(url);
-            showToast("Downloaded decoded binary file!");
+            AppUtils.download(bytes, 'decoded_file.bin', 'application/octet-stream');
           } catch(e) { showToast(`Download error: ${e.message}`); }
         });
 
@@ -2591,14 +2607,7 @@
           const isYaml = mode === 'json2yaml';
           const ext = isYaml ? 'yaml' : 'json';
           const mime = isYaml ? 'text/yaml' : 'application/json';
-          const blob = new Blob([out.value], { type: mime });
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = `converted_file.${ext}`;
-          a.click();
-          URL.revokeObjectURL(url);
-          showToast(`Downloaded converted_file.${ext}!`);
+          AppUtils.download(out.value, `converted_file.${ext}`, mime);
         });
 
         btnSwap.addEventListener('click', () => {
@@ -4532,10 +4541,7 @@
       }
     }
 
-    // Helper: Escape HTML
-    function escapeHtml(str) {
-      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-    }
+
 
     // Toggle Mobile Sidebar
     document.getElementById('btn-toggle-sidebar').addEventListener('click', () => {
