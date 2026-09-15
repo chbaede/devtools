@@ -349,6 +349,12 @@
         <input id="header-search-input" type="text" class="w-full pl-8 pr-3 py-1 bg-[#1e1e2e] text-[#cdd6f4] text-xs rounded-lg border border-[#313244] outline-none focus:border-[#89b4fa] transition" placeholder="Search (e.g. text, diff, jwt, yaml)...">
       </div>
 
+      <!-- Hub Main Link -->
+      <a href="https://main.yocto.co.kr/" target="_blank" rel="noopener noreferrer" class="px-2 sm:px-2.5 py-1 text-xs font-semibold bg-[#89b4fa]/15 hover:bg-[#89b4fa]/25 text-[#89b4fa] rounded-lg transition flex items-center gap-1.5 border border-[#89b4fa]/30 shadow-sm" title="Go to Yocto Hub Main Portal">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden xs:inline">Hub Main</span>
+      </a>
+
       <!-- Dark / Light Mode Toggle Button -->
       <button id="btn-theme-toggle" class="px-2 sm:px-2.5 py-1 text-xs font-medium bg-[#313244] hover:bg-[#45475a] text-[#f9e2af] rounded-lg transition flex items-center gap-1.5 border border-[#45475a] cursor-pointer shadow-sm" title="Toggle Light / Dark Mode">
         <span id="theme-toggle-icon" class="text-sm">☀️</span>
@@ -386,8 +392,16 @@
     <aside id="sidebar" class="w-64 bg-[#181825] border-r border-[#313244] flex flex-col shrink-0 transition-transform duration-300 z-40 select-none fixed inset-y-0 left-0 -translate-x-full md:relative md:translate-x-0 shadow-2xl md:shadow-none">
       
       <!-- Sidebar Search Box -->
-      <div class="p-3 border-b border-[#313244]/60">
-        <a href="#/" id="nav-home-link" class="nav-link flex items-center gap-2.5 px-3 py-2 text-xs font-bold rounded-lg text-[#cdd6f4] hover:bg-[#313244] bg-[#313244]/50 transition mb-2.5" data-path="#/">
+      <div class="p-3 border-b border-[#313244]/60 space-y-2">
+        <a href="https://main.yocto.co.kr/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-3 py-2 text-xs font-semibold rounded-lg text-[#89b4fa] hover:bg-[#89b4fa]/15 bg-[#89b4fa]/10 border border-[#89b4fa]/30 transition shadow-sm" title="Go to Yocto Hub Main Portal">
+          <span class="flex items-center gap-2">
+            <span class="text-sm">🌐</span>
+            <span>Yocto Hub Main</span>
+          </span>
+          <svg class="w-3.5 h-3.5 text-[#89b4fa]/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+
+        <a href="#/" id="nav-home-link" class="nav-link flex items-center gap-2.5 px-3 py-2 text-xs font-bold rounded-lg text-[#cdd6f4] hover:bg-[#313244] bg-[#313244]/50 transition" data-path="#/">
           <svg class="w-4 h-4 text-[#89b4fa] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
           <span id="nav-home">Dashboard (Home)</span>
         </a>

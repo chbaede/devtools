@@ -1,6 +1,7 @@
 # 🚀 Developer & Embedded SW Tools
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-devtools.yocto.co.kr-89b4fa?style=for-the-badge&logo=googlechrome&logoColor=white)](https://devtools.yocto.co.kr/)
+[![Hub Main](https://img.shields.io/badge/Yocto%20Hub%20Main-main.yocto.co.kr-a6e3a1?style=for-the-badge&logo=safari&logoColor=white)](https://main.yocto.co.kr/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Pure Vanilla JS](https://img.shields.io/badge/Stack-Vanilla%20JS%20%2B%20TailwindCSS-38bdf8)](index.html)
 [![Offline Ready](https://img.shields.io/badge/Offline-100%25%20Client--Side-a6e3a1)](index.html)
@@ -12,11 +13,10 @@ A lightweight, high-performance, single-page developer portal featuring **31+ of
 
 ## 🌐 Live Demo & Instant Access
 
-You can access and test all 31+ tools live in production at:
+- **Developer Tools Portal**: 👉 **[https://devtools.yocto.co.kr/](https://devtools.yocto.co.kr/)**
+- **Yocto Hub Main Portal**: 🌐 **[https://main.yocto.co.kr/](https://main.yocto.co.kr/)**
 
-👉 **[https://devtools.yocto.co.kr/](https://devtools.yocto.co.kr/)**
-
-Feel free to visit the link above, test out the utilities in your browser, and bookmark it for your daily developer workflow!
+Feel free to visit the links above, test out the utilities in your browser, and bookmark them for your daily developer workflow!
 
 ---
 
